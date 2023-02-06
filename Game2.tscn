@@ -39,6 +39,7 @@ light_energy = 0.706
 [node name="Car" type="Spatial" parent="."]
 
 [node name="Car" parent="Car" instance=ExtResource( 2 )]
+mass = 51.0204
 
 [node name="Camera" type="Camera" parent="Car/Car"]
 transform = Transform( -1, 8.74228e-08, 0, 8.6882e-08, 0.993815, 0.111053, 9.70854e-09, 0.111053, -0.993815, 0, 2.25297, -4.92814 )
@@ -51,4 +52,14 @@ skeleton = NodePath("../ground/StaticBody/CollisionShape")
 [node name="StaticBody" type="StaticBody" parent="Ramp"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Ramp/StaticBody"]
+transform = Transform( 1, 0, -1.77636e-15, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0 )
 shape = SubResource( 5 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30.4767 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Spatial"]
+transform = Transform( 0.0280962, 0, 0.999605, 0, 1, 0, -0.999605, 0, 0.0280962, 9.54911, -1.33857, -7.76772 )
+use_collision = true
+polygon = PoolVector2Array( -0.991, 0.187, 0.148, 0.653, 0.484, 1.489, 6.083, -0.019 )
+depth = 5.11

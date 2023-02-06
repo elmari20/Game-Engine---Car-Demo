@@ -112,7 +112,7 @@ surfaces/0 = {
 extents = Vector3( 1, 0.539512, 0.798568 )
 
 [node name="Car" type="VehicleBody"]
-mass = 51.0204
+mass = 96.9388
 script = ExtResource( 3 )
 
 [node name="Body" type="MeshInstance" parent="."]
@@ -122,9 +122,12 @@ mesh = SubResource( 1 )
 mesh = SubResource( 2 )
 
 [node name="left_front" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932606, 0.269871, 1.32477 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.27, 1.33 )
 use_as_steering = true
 wheel_radius = 0.341
+wheel_rest_length = 0.25
+wheel_friction_slip = 5.0
+suspension_travel = 0.25
 suspension_stiffness = 50.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -134,9 +137,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217791, 0, 0 )
 mesh = SubResource( 3 )
 
 [node name="left_rear" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.921791, 0.3474, -1.08206 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.347, -1.08 )
 use_as_traction = true
 wheel_radius = 0.365
+wheel_rest_length = 0.25
+wheel_friction_slip = 5.0
+suspension_travel = 0.25
 suspension_stiffness = 50.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -146,9 +152,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248161, -0.0125558, 0.00280
 mesh = SubResource( 4 )
 
 [node name="rear_right" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987152, 0.350214, -1.10051 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.35, -1.08 )
 use_as_traction = true
 wheel_radius = 0.356
+wheel_rest_length = 0.25
+wheel_friction_slip = 5.0
+suspension_travel = 0.25
 suspension_stiffness = 50.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -158,11 +167,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283926, 0, 0 )
 mesh = SubResource( 5 )
 
 [node name="right_front" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.922425, 0.311253, 1.34305 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.311, 1.33 )
 use_as_steering = true
 wheel_radius = 0.33
+wheel_rest_length = 0.25
+wheel_friction_slip = 5.0
+suspension_travel = 0.25
 suspension_stiffness = 50.0
 damping_compression = 1.9
+damping_relaxation = 2.0
 
 [node name="right_front" type="MeshInstance" parent="right_front"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20404, 0, 0 )
