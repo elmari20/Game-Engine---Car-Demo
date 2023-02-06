@@ -21,4 +21,9 @@ func _physics_process(delta):
 	rpm = $right_front.get_rpm()
 	$right_front.engine_force = acceleration * max_torque * (1 - rpm / max_rpm) * (100 *delta)
 	
+	$left_front/left_front.rotation_degrees.x += rpm/(60*delta) 
+	$right_front/right_front.rotation_degrees.x += rpm/(60*delta)
+	$left_rear/left_rear.rotation_degrees.x += rpm/(60*delta)
+	$rear_right/rear_right.rotation_degrees.x += rpm/(60*delta)
+	
 	
