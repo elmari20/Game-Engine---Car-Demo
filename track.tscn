@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://camera_pivot.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Track Assets/track3.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Cars/Test Car/Car.tscn" type="PackedScene" id=3]
 
-[node name="track3" instance=ExtResource( 2 )]
+[node name="track" instance=ExtResource( 2 )]
 
 [node name="Car2" parent="." index="2" instance=ExtResource( 3 )]
-transform = Transform( 0.225767, 0, 0.974181, 0, 1, 0, -0.974181, 0, 0.225767, 0, 1.17262, 23.7124 )
+transform = Transform( 0.488987, 0, 0.872291, 0, 1, 0, -0.872291, 0, 0.488987, 0, 1.17262, 24.7759 )
 linear_damp = 1.0
 angular_damp = 1.0
 
