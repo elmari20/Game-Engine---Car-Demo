@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game Engine - Car Demo"
-run/main_scene="res://Game2.tscn"
+run/main_scene="res://track.tscn"
 config/icon="res://icon.png"
 
 [autoload]
