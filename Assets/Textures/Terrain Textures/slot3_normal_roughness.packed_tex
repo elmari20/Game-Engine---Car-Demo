@@ -1,0 +1,9 @@
+{
+	"contains_albedo": false,
+	"resolution": 1024,
+	"src": {
+		"a": "res://Assets/Textures/Terrain Textures/Rocks3/Rock028_2K_Roughness.jpg",
+		"normalmap_flip_y": true,
+		"rgb": "res://Assets/Textures/Terrain Textures/Rocks3/Rock028_2K_NormalGL.jpg"
+	}
+}

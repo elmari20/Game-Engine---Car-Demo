@@ -1,0 +1,8 @@
+{
+	"contains_albedo": true,
+	"resolution": 1024,
+	"src": {
+		"a": "res://Assets/Textures/Terrain Textures/Rocks3/Rock028_2K_Displacement.jpg",
+		"rgb": "res://Assets/Textures/Terrain Textures/Rocks3/Rock028_2K_Color.jpg"
+	}
+}
