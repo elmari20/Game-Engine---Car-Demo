@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://camera_pivot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
@@ -17,8 +17,6 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=15]
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=16]
 [ext_resource path="res://Assets/simple-grass/low_poly_grass1.png" type="Texture" id=17]
-[ext_resource path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-02-1-mesh.tscn" type="PackedScene" id=18]
-[ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=19]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 14 )
@@ -185,10 +183,6 @@ shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3( 1, 1, 1 )
-
-[node name="Scatter3D" type="Spatial" parent="HTerrain" index="2"]
-script = ExtResource( 19 )
-_scenes = [ ExtResource( 18 ) ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 0.0636091, 0.997975, 0, -0.997975, 0.0636091, 221.935, 218.918, 240.756 )
