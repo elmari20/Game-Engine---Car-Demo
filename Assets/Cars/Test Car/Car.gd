@@ -1,7 +1,7 @@
 extends VehicleBody
 
 
-var max_rpm = 800
+export var max_rpm = 800
 export (float, 0,10,0.1 )var MAX_BRAKE_FORCE = 5.0
 var max_torque = 500
 
