@@ -1,10 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Assets/Scripts/camera_pivot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Cars/Test Car/Car.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Audio/acceleration.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Audio/engine-loop.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Cars/Test Car/Car_Rework.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot3_albedo_bump.packed_tex" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot1_albedo_bump.packed_tex" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_normal_roughness.packed_tex" type="Texture" id=8]
@@ -18,11 +15,7 @@
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=16]
 [ext_resource path="res://Assets/simple-grass/low_poly_grass1.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_albedo_bump.packed_tex" type="Texture" id=18]
-[ext_resource path="res://Assets/Audio/decelerate.wav" type="AudioStream" id=19]
 [ext_resource path="res://t_data/data.hterrain" type="Resource" id=20]
-[ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=23]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 14 )
@@ -145,27 +138,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 [node name="Track" parent="." index="0"]
 transform = Transform( 0.919743, 0, 0, 0, 0.596429, 0, 0, 0, 4.34374, 213.192, 0, 290.473 )
 
-[node name="Car2" parent="." index="2" instance=ExtResource( 3 )]
-transform = Transform( 0.488987, 0, 0.872291, 0, 1, 0, -0.872291, 0, 0.488987, 161.504, 1.17262, 269.433 )
-mass = 40.8163
-linear_damp = 1.0
-angular_damp = 1.0
-
-[node name="camera_pivot" type="Spatial" parent="Car2" index="6"]
-script = ExtResource( 1 )
-
-[node name="Camera" type="Camera" parent="Car2/camera_pivot" index="0"]
-transform = Transform( -1, 3.69465e-08, -7.92319e-08, 0, 0.906308, 0.422618, 8.74228e-08, 0.422618, -0.906308, 0, 3.12497, -6.44104 )
-far = 496.3
-
-[node name="Accelerate" type="AudioStreamPlayer" parent="Car2" index="7"]
-stream = ExtResource( 4 )
-
-[node name="Decelerate" type="AudioStreamPlayer" parent="Car2" index="8"]
-stream = ExtResource( 19 )
-
-[node name="TopSpeed" type="AudioStreamPlayer" parent="Car2" index="9"]
-stream = ExtResource( 5 )
+[node name="Car" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 159.233, 0.754846, 274.526 )
+mass = 14.0
+engine_force_value = 50
 
 [node name="HTerrain" type="Spatial" parent="." index="3"]
 script = ExtResource( 13 )
@@ -189,7 +165,6 @@ shader_params/u_globalmap_blend_distance = null
 shader_params/u_colormap_opacity_per_texture = Plane( 1, 1, 1, 1 )
 
 [node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain" index="0"]
-visible = false
 script = ExtResource( 15 )
 __meta__ = {
 "_editor_icon": ExtResource( 16 )
@@ -209,29 +184,3 @@ light_specular = 2.686
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
 environment = SubResource( 3 )
-
-[node name="Buttons" type="Node" parent="." index="6"]
-
-[node name="RaceButton" type="Button" parent="Buttons" index="0"]
-margin_left = -2.0
-margin_top = 515.0
-margin_right = 232.0
-margin_bottom = 600.0
-text = "Race"
-script = ExtResource( 21 )
-
-[node name="DriftButton" type="Button" parent="Buttons" index="1"]
-margin_left = 295.0
-margin_top = 513.0
-margin_right = 529.0
-margin_bottom = 598.0
-text = "Drift"
-script = ExtResource( 22 )
-
-[node name="MtnButton" type="Button" parent="Buttons" index="2"]
-margin_left = 645.0
-margin_top = 511.0
-margin_right = 879.0
-margin_bottom = 596.0
-text = "Mountains"
-script = ExtResource( 23 )
