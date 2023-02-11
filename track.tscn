@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://camera_pivot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Cars/Test Car/Car.tscn" type="PackedScene" id=3]
-[ext_resource path="res://t_data/data.hterrain" type="Resource" id=4]
-[ext_resource path="res://Assets/Textures/Terrain Textures/slot2_albedo_bump.packed_tex" type="Texture" id=5]
+[ext_resource path="res://Assets/Audio/acceleration.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/engine-loop.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot3_albedo_bump.packed_tex" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot1_albedo_bump.packed_tex" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_normal_roughness.packed_tex" type="Texture" id=8]
@@ -17,11 +17,14 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=15]
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=16]
 [ext_resource path="res://Assets/simple-grass/low_poly_grass1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/Terrain Textures/slot2_albedo_bump.packed_tex" type="Texture" id=18]
+[ext_resource path="res://Assets/Audio/decelerate.wav" type="AudioStream" id=19]
+[ext_resource path="res://t_data/data.hterrain" type="Resource" id=20]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 14 )
 mode = 0
-textures = [ [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ) ], [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 9 ) ] ]
+textures = [ [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 6 ) ], [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 9 ) ] ]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type spatial;
@@ -140,7 +143,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 transform = Transform( 0.919743, 0, 0, 0, 0.596429, 0, 0, 0, 4.34374, 213.192, 0, 290.473 )
 
 [node name="Car2" parent="." index="2" instance=ExtResource( 3 )]
-transform = Transform( 0.999999, 3.19228e-05, -0.000850955, -3.07906e-05, 0.999999, 0.00134068, 0.000850996, -0.00134066, 0.999999, 158.987, 1.01694, 277.416 )
+transform = Transform( 0.488987, 0, 0.872291, 0, 1, 0, -0.872291, 0, 0.488987, 161.504, 1.17262, 269.433 )
+mass = 40.8163
 linear_damp = 1.0
 angular_damp = 1.0
 
@@ -151,10 +155,19 @@ script = ExtResource( 1 )
 transform = Transform( -1, 3.69465e-08, -7.92319e-08, 0, 0.906308, 0.422618, 8.74228e-08, 0.422618, -0.906308, 0, 3.12497, -6.44104 )
 far = 496.3
 
+[node name="Accelerate" type="AudioStreamPlayer" parent="Car2" index="7"]
+stream = ExtResource( 4 )
+
+[node name="Decelerate" type="AudioStreamPlayer" parent="Car2" index="8"]
+stream = ExtResource( 19 )
+
+[node name="TopSpeed" type="AudioStreamPlayer" parent="Car2" index="9"]
+stream = ExtResource( 5 )
+
 [node name="HTerrain" type="Spatial" parent="." index="3"]
 script = ExtResource( 13 )
 lod_scale = 5.0
-_terrain_data = ExtResource( 4 )
+_terrain_data = ExtResource( 20 )
 chunk_size = 32
 collision_enabled = true
 collision_layer = 1
