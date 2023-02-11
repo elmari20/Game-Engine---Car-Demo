@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://camera_pivot.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/camera_pivot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Cars/Test Car/Car.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Audio/acceleration.wav" type="AudioStream" id=4]

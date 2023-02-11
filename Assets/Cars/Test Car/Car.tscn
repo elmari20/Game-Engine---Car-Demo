@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Audio/acceleration.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/decelerate.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/engine-loop.wav" type="AudioStream" id=8]
-[ext_resource path="res://camera_pivot.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Scripts/camera_pivot.gd" type="Script" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "TestCar_BodyMesh"
