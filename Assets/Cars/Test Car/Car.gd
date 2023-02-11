@@ -3,7 +3,7 @@ extends VehicleBody
 
 export var max_rpm = 800
 export (float, 0,10,0.1 )var MAX_BRAKE_FORCE = 5.0
-var max_torque = 500
+var max_torque = 900
 
 export var joy_brake = JOY_ANALOG_L2
 export var brake_mult = 1.0

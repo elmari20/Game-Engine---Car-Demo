@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Scripts/camera_pivot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Track Assets/track.gltf" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Scripts/Speedometer.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Scripts/BackButton.gd" type="Script" id=25]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 14 )
@@ -213,25 +215,38 @@ environment = SubResource( 3 )
 [node name="Buttons" type="Node" parent="." index="6"]
 
 [node name="RaceButton" type="Button" parent="Buttons" index="0"]
-margin_left = -2.0
-margin_top = 515.0
-margin_right = 232.0
-margin_bottom = 600.0
+margin_left = 75.0
+margin_top = 500.0
+margin_right = 295.0
+margin_bottom = 585.0
 text = "Race"
 script = ExtResource( 21 )
 
 [node name="DriftButton" type="Button" parent="Buttons" index="1"]
-margin_left = 295.0
-margin_top = 513.0
-margin_right = 529.0
-margin_bottom = 598.0
+margin_left = 400.0
+margin_top = 500.0
+margin_right = 620.0
+margin_bottom = 585.0
 text = "Drift"
 script = ExtResource( 22 )
 
 [node name="MtnButton" type="Button" parent="Buttons" index="2"]
-margin_left = 645.0
-margin_top = 511.0
-margin_right = 879.0
-margin_bottom = 596.0
+margin_left = 725.0
+margin_top = 500.0
+margin_right = 945.0
+margin_bottom = 585.0
 text = "Mountains"
 script = ExtResource( 23 )
+
+[node name="Speedometer" type="Button" parent="Buttons" index="3"]
+margin_left = 880.0
+margin_right = 1020.0
+margin_bottom = 40.0
+text = "Speed: 50km/h"
+script = ExtResource( 24 )
+
+[node name="Back" type="Button" parent="Buttons" index="4"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Back"
+script = ExtResource( 25 )

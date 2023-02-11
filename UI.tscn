@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="RaceButton" type="Button" parent="Buttons"]
+margin_left = 75.0
+margin_top = 500.0
+margin_right = 295.0
+margin_bottom = 585.0
+text = "Race"
+script = ExtResource( 2 )
+
+[node name="DriftButton" type="Button" parent="Buttons"]
+margin_left = 400.0
+margin_top = 500.0
+margin_right = 620.0
+margin_bottom = 585.0
+text = "Drift"
+script = ExtResource( 1 )
+
+[node name="MtnButton" type="Button" parent="Buttons"]
+margin_left = 725.0
+margin_top = 500.0
+margin_right = 945.0
+margin_bottom = 585.0
+text = "Mountains"
+script = ExtResource( 3 )
