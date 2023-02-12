@@ -7,3 +7,12 @@
 mass = 6.0
 script = ExtResource( 2 )
 engine_force_value = 30
+
+[node name="left_front" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.3, 1.35131 )
+
+[node name="right_front" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.3, 1.34139 )
+
+[node name="Camera" parent="camera_pivot" index="0"]
+current = true
