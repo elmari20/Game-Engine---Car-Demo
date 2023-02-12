@@ -4,7 +4,9 @@ extends VehicleBody
 const STEER_SPEED = 1.5
 const STEER_LIMIT = 0.6
 var steer_target = 0
+export(float, -10, 10) var max_break_force
 export var engine_force_value = 40
+
 
 var play_accelerate = false;
 var play_decelerate = false;
@@ -20,8 +22,8 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("Up"):
 		var speed = linear_velocity.length()
-		print($rear_right.engine_force)
 		if speed < 5 and speed != 0:
+			$left_rear.engine_force = clamp(engine_force_value * 5 / speed, 0, 100)
 			$left_rear.engine_force = clamp(engine_force_value * 5 / speed, 0, 100)
 			$rear_right.engine_force = clamp(engine_force_value * 5 / speed, 0, 100)
 		else:
@@ -38,11 +40,10 @@ func _physics_process(delta):
 			else:
 				$left_rear.engine_force = -engine_force_value
 				$rear_right.engine_force = -engine_force_value
-		else:
-			$left_rear.brake = 1
-			$rear_right.brake = 1
 	else:
-		brake = 0.0
+		brake = 0
+	if Input.is_action_pressed("Stop"):
+		brake = 1.0 * max_break_force
 
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 		
