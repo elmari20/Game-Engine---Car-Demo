@@ -11,7 +11,7 @@ export(SpeedUnit) var speed_unit = 1
 
 
 func _process(_delta):
-	var speed = get_parent().get_parent().get_child(2).linear_velocity.length()
+	var speed = get_parent().get_parent().get_node("Car").linear_velocity.length()
 	if speed_unit == SpeedUnit.METERS_PER_SECOND:
 		text = "Speed: " + ("%.1f" % speed) + " m/s"
 	elif speed_unit == SpeedUnit.KILOMETERS_PER_HOUR:
