@@ -139,7 +139,7 @@ background_mode = 2
 background_sky = SubResource( 2 )
 tonemap_mode = 3
 
-[node name="track" instance=ExtResource( 2 )]
+[node name="track2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 
 [node name="Track" parent="." index="0"]
