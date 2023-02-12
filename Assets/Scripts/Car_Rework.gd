@@ -12,7 +12,8 @@ var play_accelerate = false;
 var play_decelerate = false;
 var play_engine = false;
 
-
+func _ready():
+	set_process(true)
 
 func _physics_process(delta):
 	play_sound()

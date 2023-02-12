@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Cars/Test Car/Car_Rework.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Scripts/Speedometer.gd" type="Script" id=2]
+[ext_resource path="res://Assets/MenuControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot3_albedo_bump.packed_tex" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot1_albedo_bump.packed_tex" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_normal_roughness.packed_tex" type="Texture" id=8]
@@ -16,10 +16,6 @@
 [ext_resource path="res://Assets/simple-grass/low_poly_grass1.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_albedo_bump.packed_tex" type="Texture" id=18]
 [ext_resource path="res://t_data/data.hterrain" type="Resource" id=20]
-[ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=23]
-[ext_resource path="res://Assets/Scripts/BackButton.gd" type="Script" id=24]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 14 )
@@ -187,41 +183,4 @@ engine_force_value = 50
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
 
-[node name="Buttons" type="Node" parent="."]
-
-[node name="RaceButton" type="Button" parent="Buttons"]
-margin_left = 75.0
-margin_top = 500.0
-margin_right = 295.0
-margin_bottom = 585.0
-text = "Race"
-script = ExtResource( 21 )
-
-[node name="DriftButton" type="Button" parent="Buttons"]
-margin_left = 400.0
-margin_top = 500.0
-margin_right = 620.0
-margin_bottom = 585.0
-text = "Drift"
-script = ExtResource( 22 )
-
-[node name="MtnButton" type="Button" parent="Buttons"]
-margin_left = 725.0
-margin_top = 500.0
-margin_right = 945.0
-margin_bottom = 585.0
-text = "Mountains"
-script = ExtResource( 23 )
-
-[node name="Speedometer" type="Button" parent="Buttons"]
-margin_left = 880.0
-margin_right = 1020.0
-margin_bottom = 40.0
-text = "Speed: 50km/h"
-script = ExtResource( 2 )
-
-[node name="Back" type="Button" parent="Buttons"]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Back"
-script = ExtResource( 24 )
+[node name="MenuControl" parent="." instance=ExtResource( 2 )]
