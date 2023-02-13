@@ -32,7 +32,7 @@ background_mode = 2
 background_sky = SubResource( 2 )
 tonemap_mode = 3
 
-[node name="track" type="Spatial"]
+[node name="track2" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 
 [node name="BezierCurve" type="Spatial" parent="."]
@@ -109,7 +109,6 @@ script = ExtResource( 17 )
 
 [node name="Camera2" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.882152, 0.470966, 0, -0.470966, 0.882152, 144.14, 6.90094, 280.54 )
-current = true
 far = 122.2
 script = ExtResource( 1 )
 lerp_speed = 20.0
