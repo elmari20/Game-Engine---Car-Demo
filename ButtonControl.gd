@@ -17,6 +17,9 @@ func _ready():
 	if (get_node("../Car")):
 		car = get_node("../Car")
 		original_mode = car.mode
+	else:
+		car = get_node("../DriftCar").get_node("Ball")
+		original_mode = car.mode
 	menu.hide()
 	set_process(true) 
 	
@@ -26,18 +29,18 @@ func _input(event):
 		if menu.visible:
 			menu.hide()
 			speedometer.show()
-			if (get_node("../Car")):
-				car.mode = original_mode
-				car.set_linear_velocity(linear_velocity)
-				car.set_angular_velocity(angular_velocity)
-				
-				car.set_process(true)
+
+			car.mode = original_mode
+			car.set_linear_velocity(linear_velocity)
+			car.set_angular_velocity(angular_velocity)
+			
+			car.set_process(true)
 		else:
 			menu.show()
 			speedometer.hide()
-			if (get_node("../Car")):
-				linear_velocity = car.get_linear_velocity()
-				angular_velocity = car.get_angular_velocity()
-				original_mode = car.mode
-				car.mode = PhysicsServer.BODY_MODE_KINEMATIC
-				car.set_process(false)
+
+			linear_velocity = car.get_linear_velocity()
+			angular_velocity = car.get_angular_velocity()
+			original_mode = car.mode
+			car.mode = PhysicsServer.BODY_MODE_KINEMATIC
+			car.set_process(false)
