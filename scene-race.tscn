@@ -140,8 +140,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 transform = Transform( 0.919743, 0, 0, 0, 0.596429, 0, 0, 0, 4.34374, 213.192, 0, 290.473 )
 
 [node name="Car" parent="." index="2" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 159.233, 0.754846, 274.526 )
-mass = 14.0
+transform = Transform( 0.180862, 0, 0.983508, 0, 1, 0, -0.983508, 0, 0.180862, 138.875, 0.754846, 327.043 )
+mass = 10.2041
 engine_force_value = 50
 
 [node name="HTerrain" type="Spatial" parent="." index="3"]

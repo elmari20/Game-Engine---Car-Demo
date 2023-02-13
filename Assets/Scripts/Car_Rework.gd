@@ -1,7 +1,7 @@
 extends VehicleBody
 
 
-const STEER_SPEED = 1.5
+const STEER_SPEED = 0.6
 const STEER_LIMIT = 0.6
 var steer_target = 0
 export(float, -10, 10) var max_break_force
