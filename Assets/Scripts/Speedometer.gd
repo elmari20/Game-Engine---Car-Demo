@@ -21,6 +21,10 @@ func _process(_delta):
 		else: # speed_unit == SpeedUnit.MILES_PER_HOUR:
 			speed *= 2.23694
 			text = "Speed: " + ("%.0f" % speed) + " mph"
+	if get_parent().get_parent().has_node("DriftCar"):
+		var speed = get_parent().get_parent().get_node("DriftCar").get_node("Ball").linear_velocity.length()
+		speed *= 3.6
+		text = "Speed: " + ("%.0f" % speed) + " km/h"
 
 
 func _on_Spedometer_pressed():

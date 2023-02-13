@@ -55,7 +55,7 @@ size = Vector2( 513, 513 )
 [sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 4 )
 
-[node name="track" type="Spatial"]
+[node name="track3" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66.8407 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]

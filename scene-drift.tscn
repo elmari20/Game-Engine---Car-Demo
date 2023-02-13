@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://Arcade Style Car.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=5]
 [ext_resource path="res://t_data/data.hterrain" type="Resource" id=6]
 [ext_resource path="res://Assets/Models/Stands/generic medium.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/Scripts/Speedometer.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=15]
@@ -60,10 +61,10 @@ shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
 shader_params/u_colormap_opacity_per_texture = Plane( 1, 1, 1, 1 )
 
-[node name="Car" parent="." instance=ExtResource( 2 )]
+[node name="DriftCar" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.151433, 0, -0.988467, 0, 1, 0, 0.988467, 0, 0.151433, 579.661, 2.28511, 889.276 )
 
-[node name="DriftCar" parent="Car" index="1"]
+[node name="DriftCar" parent="DriftCar" index="1"]
 transform = Transform( 3, 0, 2.98023e-08, 0, 3, 0, -2.98023e-08, 0, 3, 0, -0.70695, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -107,13 +108,20 @@ margin_bottom = 20.0
 text = "Back"
 script = ExtResource( 17 )
 
+[node name="Speedometer" type="Button" parent="Buttons"]
+margin_left = 880.0
+margin_right = 1020.0
+margin_bottom = 40.0
+text = "Speed: 50km/h"
+script = ExtResource( 8 )
+
 [node name="Camera2" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.882152, 0.470966, 0, -0.470966, 0.882152, 144.14, 6.90094, 280.54 )
 far = 122.2
 script = ExtResource( 1 )
 lerp_speed = 20.0
 MAX_CAMERA_ZOOM = 1.65
-target_path = NodePath("../Car/DriftCar")
+target_path = NodePath("../DriftCar/DriftCar")
 offset = Vector3( 0, 2, 3 )
 
 [node name="Track2" parent="." instance=ExtResource( 3 )]
@@ -127,5 +135,5 @@ mesh = ExtResource( 7 )
 transform = Transform( -1.99106, 0.00932737, -0.14544, 0.0188365, 1.0061, 5.55569e-05, 0.290868, -0.00130646, -0.995573, 836.051, -0.727299, 807.938 )
 mesh = ExtResource( 7 )
 
-[editable path="Car"]
-[editable path="Car/DriftCar"]
+[editable path="DriftCar"]
+[editable path="DriftCar/DriftCar"]
