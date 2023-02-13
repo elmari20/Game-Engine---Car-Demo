@@ -1,7 +1,7 @@
 extends VehicleBody
 
 
-const STEER_SPEED = 1.5
+const STEER_SPEED = 0.6
 const STEER_LIMIT = 0.6
 var steer_target = 0
 export(float, -10, 10) var max_break_force
@@ -45,8 +45,8 @@ func _physics_process(delta):
 		brake = 0
 	if Input.is_action_pressed("Stop"):
 		brake = 1.0 * max_break_force
-
-	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+	steering = lerp(steering, Input.get_axis("Right", "Left") * 0.2, 3 * delta)
+	# steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 		
 	
 	
