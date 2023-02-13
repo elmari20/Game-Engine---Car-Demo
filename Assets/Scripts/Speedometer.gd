@@ -23,7 +23,7 @@ func _process(_delta):
 			text = "Speed: " + ("%.0f" % speed) + " mph"
 	if get_parent().get_parent().has_node("DriftCar"):
 		var speed = get_parent().get_parent().get_node("DriftCar").get_node("Ball").linear_velocity.length()
-		speed *= 3.6
+		speed *= 6
 		text = "Speed: " + ("%.0f" % speed) + " km/h"
 
 

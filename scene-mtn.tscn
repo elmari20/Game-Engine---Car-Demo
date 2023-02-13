@@ -40,7 +40,7 @@ environment = SubResource( 3 )
 
 [node name="Car" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300.657, 23.2459, 317.694 )
-mass = 153.061
+mass = 224.49
 
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 13 )
