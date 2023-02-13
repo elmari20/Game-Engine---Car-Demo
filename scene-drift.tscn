@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://Arcade Style Car.tscn" type="PackedScene" id=2]
@@ -7,11 +7,7 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=5]
 [ext_resource path="res://t_data/data.hterrain" type="Resource" id=6]
 [ext_resource path="res://Assets/Models/Stands/generic medium.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://Assets/Scripts/Speedometer.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Scripts/DriftButton.gd" type="Script" id=12]
-[ext_resource path="res://Assets/Scripts/RaceButton.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Scripts/MtnButton.gd" type="Script" id=15]
-[ext_resource path="res://Assets/Scripts/BackButton.gd" type="Script" id=17]
+[ext_resource path="res://Assets/MenuControl.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot1_albedo_bump.packed_tex" type="Texture" id=18]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot2_normal_roughness.packed_tex" type="Texture" id=19]
 [ext_resource path="res://Assets/Textures/Terrain Textures/slot0_normal_roughness.packed_tex" type="Texture" id=20]
@@ -76,45 +72,6 @@ light_specular = 2.686
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
 
-[node name="Buttons" type="Node" parent="."]
-
-[node name="RaceButton" type="Button" parent="Buttons"]
-margin_left = 75.0
-margin_top = 500.0
-margin_right = 295.0
-margin_bottom = 585.0
-text = "Race"
-script = ExtResource( 13 )
-
-[node name="DriftButton" type="Button" parent="Buttons"]
-margin_left = 400.0
-margin_top = 500.0
-margin_right = 620.0
-margin_bottom = 585.0
-text = "Drift"
-script = ExtResource( 12 )
-
-[node name="MtnButton" type="Button" parent="Buttons"]
-margin_left = 725.0
-margin_top = 500.0
-margin_right = 945.0
-margin_bottom = 585.0
-text = "Mountains"
-script = ExtResource( 15 )
-
-[node name="Back" type="Button" parent="Buttons"]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Back"
-script = ExtResource( 17 )
-
-[node name="Speedometer" type="Button" parent="Buttons"]
-margin_left = 880.0
-margin_right = 1020.0
-margin_bottom = 40.0
-text = "Speed: 50km/h"
-script = ExtResource( 8 )
-
 [node name="Camera2" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.882152, 0.470966, 0, -0.470966, 0.882152, 144.14, 6.90094, 280.54 )
 far = 122.2
@@ -134,6 +91,8 @@ mesh = ExtResource( 7 )
 [node name="Stands2" type="MeshInstance" parent="."]
 transform = Transform( -1.99106, 0.00932737, -0.14544, 0.0188365, 1.0061, 5.55569e-05, 0.290868, -0.00130646, -0.995573, 836.051, -0.727299, 807.938 )
 mesh = ExtResource( 7 )
+
+[node name="MenuControl" parent="." instance=ExtResource( 8 )]
 
 [editable path="DriftCar"]
 [editable path="DriftCar/DriftCar"]
